@@ -220,6 +220,35 @@ chat_instance: "<chat instance>"
 chat_id: "<origin chat id>"
 ```
 
+Any message that will be sent will trigger `telegram_sent` with all message details:
+
+```yaml
+message_id: <message ID>
+date: <date timestamp>
+chat:
+  id: <id of chat>
+  type: <type of chat>
+  title: <name of chat>
+  all_members_are_administrators: <all members are administrators>
+entities: []
+caption_entities: []
+photo: <photo object's array>
+caption: <caption of the message - if photo / video / location>
+text: <text of the message - if not attachment available>
+new_chat_members: []
+new_chat_photo: []
+delete_chat_photo: false
+group_chat_created: false
+supergroup_chat_created: false
+channel_chat_created: false
+from:
+  id: <id of sender>
+  first_name: <name of sender>
+  is_bot: <is boot>
+  username: <username>
+```
+
+
 ### Configuration samples
 
 Simple ping pong example.
